@@ -13,4 +13,13 @@ X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.2,random_sta
 #Ridge Regression
 ridge_model = Ridge(alpha=1.0) # a;pha controls the regularisation stregth
 ridge_model.fit(X_train, y_train)
-ridge_pred = ridge_model.predict
+ridge_pred = ridge_model.predict(X_test)
+ridge_mse = mean_squared_error(y_test, ridge_pred)
+print("Ridge Mean square Error", ridge_mse)
+
+#Lasso Regression 
+lasso_model=Lasso(alpha=0.1) #alpha controls the regularisation strength
+lasso_model.fit(X_train, y_train)
+lasso_pred=lasso_model.predict(X_test)
+lasso_mse=mean_squared_error(y_test, lasso_pred)
+print("Lasso Mean Squared Error", lasso_mse)

@@ -4,6 +4,8 @@ from sklearn.metrics import mean_squared_error
 import numpy as np
 import pandas as pd
 from sklearn.metrics import r2_score
+import matplotlib.pyplot as plt
+
 
 
 # Sample data (e.g., house size vs. house price)
@@ -22,6 +24,8 @@ y_pred = model.predict(X_test)
 
 # Evaluate the model
 mse = mean_squared_error(y_test, y_pred)
+
+print ("MSE : ", mse)
 rmse = np.sqrt(mse)
 
 # Print RMSE
